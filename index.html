@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeline</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            padding-top: 24px;
+            padding-bottom: 24px;
+            max-width: 1140px;
+            margin: 0 auto;
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+
+        .justify_end {
+            justify-content: end;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            padding-left: -12px;
+            padding-right: -12px;
+        }
+
+        .col-6 {
+            width: 50%;
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+
+        .timeline_container {
+            position: relative;
+        }
+
+        .timeline_container::after {
+            position: absolute;
+            content: '';
+            width: 6px;
+            height: 100%;
+            background-color: red;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .timeline_box_one,
+        .timeline_box_two {
+            position: relative;
+        }
+
+        .timeline_box_one::after {
+            position: absolute;
+            content: '';
+            height: 20px;
+            background-color: blueviolet;
+            width: 20px;
+            border-radius: 50%;
+            top: 0;
+            right: -10px;
+            z-index: 1;
+        }
+
+        .timeline_box_two::after {
+            position: absolute;
+            content: '';
+            height: 20px;
+            background-color: blueviolet;
+            width: 20px;
+            border-radius: 50%;
+            top: 0;
+            left: -10px;
+            z-index: 1;
+        }
+
+        @media (max-width:768px) {
+            .justify_md_start {
+                justify-content: left;
+            }
+
+            .col_md_12 {
+                width: 100%;
+            }
+
+            .timeline_container::after {
+                left: 0;
+                transform: translateX(-50%);
+            }
+
+            .timeline_box_one::after {
+                left: -10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <div class="timeline_container">
+                <div class="row">
+                    <div class="col-6 col_md_12 timeline_box_one">
+                        <div style="padding: 24px; background-color: aqua;">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt provident eveniet
+                                saepe,
+                                nam excepturi necessitatibus molestiae debitis dolore odio cumque in consequatur
+                                aperiam
+                                rem
+                                totam illo minima laboriosam ea quidem.</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-top: 24px;" class="row justify_end justify_md_start">
+                    <div class="col-6 col_md_12 timeline_box_two">
+                        <div style="padding: 24px; background-color: aqua;">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt provident eveniet
+                                saepe,
+                                nam excepturi necessitatibus molestiae debitis dolore odio cumque in consequatur
+                                aperiam
+                                rem
+                                totam illo minima laboriosam ea quidem.</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-top: 24px;" class="row">
+                    <div class="col-6 col_md_12 timeline_box_one">
+                        <div style="padding: 24px; background-color: aqua;">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt provident eveniet
+                                saepe,
+                                nam excepturi necessitatibus molestiae debitis dolore odio cumque in consequatur
+                                aperiam
+                                rem
+                                totam illo minima laboriosam ea quidem.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
